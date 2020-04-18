@@ -4,10 +4,10 @@
   "description": "Library App",
   "author": "Kirill Arkhypov",
   "license": "MIT",
-  "main": "src/index.html",
+  "main": "public/index.html",
   "scripts": {
-    "dev": "npm run clean && parcel src/index.html --open",
-    "build": "npm run clean && parcel build src/index.html",
+    "dev": "npm run clean && parcel public/index.html --open",
+    "build": "npm run clean && parcel build public/index.html",
     "clean": "rm -rf dist/*"
   },
   "browserslist": {
