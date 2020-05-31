@@ -5,3 +5,5 @@ const debounce = (func, delay = 1000) => {
     timeout = setTimeout(() => func(...args), delay);
   };
 };
+
+export default debounce;
