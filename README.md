@@ -1,1 +1,1 @@
-Library App
+Movie Search App

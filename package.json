@@ -1,7 +1,7 @@
 {
-  "name": "library-app",
+  "name": "movie-search-app",
   "version": "1.0.0",
-  "description": "Library App",
+  "description": "Movie Search App",
   "author": "Kirill Arkhypov",
   "license": "MIT",
   "main": "public/index.html",
