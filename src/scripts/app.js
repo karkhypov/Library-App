@@ -11,8 +11,6 @@ async function fetchMovies(search) {
   let movies;
   if (response.ok) {
     movies = await response.json();
-    // console.log(movies);
-    // if (movies.Error) return [];
   } else {
     alert(`Error HTTP: ${response.status}`);
   }
