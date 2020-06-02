@@ -1,20 +1,21 @@
 import debounce from './utils';
 
-const URL = 'http://www.omdbapi.com/';
-const API_KEY = '74508c55';
+const URL = 'https://api.themoviedb.org/3';
+const API_KEY = 'b053d2e58901a03f116084d8a555610b';
 
 const input = document.querySelector('input');
 const output = document.querySelector('#output');
 
-async function fetchMovies(search) {
-  const response = await fetch(`${URL}?apikey=${API_KEY}&s=${search}`);
+async function fetchMovies(query) {
+  const response = await fetch(`${URL}/search/movie?api_key=${API_KEY}&query=${query.toString()}`);
   let movies;
   if (response.ok) {
     movies = await response.json();
   } else {
     alert(`Error HTTP: ${response.status}`);
   }
-  return movies.Search;
+  console.log(movies);
+  return movies.results;
 }
 
 const onInput = async e => {
@@ -29,8 +30,8 @@ const onInput = async e => {
     const div = document.createElement('div');
 
     div.innerHTML = `
-      <img src="${movie.Poster}" />
-      <h1>${movie.Title}</h1>
+      <img src='http://image.tmdb.org/t/p/w300/${movie.poster_path}' />
+      <h1>${movie.title}</h1>
     `;
 
     output.appendChild(div);
