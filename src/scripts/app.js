@@ -7,14 +7,13 @@ const input = document.querySelector('input');
 const output = document.querySelector('#output');
 
 async function fetchMovies(query) {
-  const response = await fetch(`${URL}/search/movie?api_key=${API_KEY}&query=${query.toString()}`);
+  const response = await fetch(`${URL}/search/movie?api_key=${API_KEY}&query=${query}`);
   let movies;
   if (response.ok) {
     movies = await response.json();
   } else {
     alert(`Error HTTP: ${response.status}`);
   }
-  console.log(movies);
   return movies.results;
 }
 
