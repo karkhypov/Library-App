@@ -25,7 +25,7 @@ const onInput = async e => {
   }
   output.innerHTML = '';
 
-  for (const movie of movies) {
+  movies.forEach(movie => {
     const div = document.createElement('div');
 
     div.innerHTML = `
@@ -34,7 +34,7 @@ const onInput = async e => {
     `;
 
     output.appendChild(div);
-  }
+  });
 };
 
 input.addEventListener('input', debounce(onInput));
