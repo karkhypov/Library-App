@@ -1,30 +1,27 @@
 const tailwindcss = require('tailwindcss');
-const purgecss = require('@fullhuman/postcss-purgecss');
+const autoprefixer = require('autoprefixer');
 
-const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  // Specify the paths to all of the template files in your project
+  content: [
+    './public/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.jsx',
+    // etc.
+  ],
 
-const plugins = [tailwindcss];
+  // This is the function used to extract class names from your templates
+  defaultExtractor: content => {
+    // Capture as liberally as possible, including things like `h-(screen-1.5)`
+    const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
 
-if (!IS_DEVELOPMENT) {
-  class TailwindExtractor {
-    static extract(content) {
-      return content.match(/[A-z0-9-:/]+/g) || [];
-    }
-  }
+    // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+    const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
 
-  plugins.push(
-    purgecss({
-      content: ['public/*.html'],
-      extractors: [
-        {
-          extractor: TailwindExtractor,
-          extensions: ['html'],
-        },
-      ],
-    }),
-  );
-}
+    return broadMatches.concat(innerMatches);
+  },
+});
 
 module.exports = {
-  plugins,
+  plugins: [tailwindcss, autoprefixer, ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
 };
