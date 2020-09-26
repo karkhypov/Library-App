@@ -15,13 +15,13 @@ export const lazyImages = () => {
     image.src = src;
   }
 
-  const imagesObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
+  const imagesObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         loadImage(entry.target);
         imagesObserver.unobserve(entry.target);
       }
     });
   });
-  images.forEach(image => imagesObserver.observe(image));
+  images.forEach((image) => imagesObserver.observe(image));
 };

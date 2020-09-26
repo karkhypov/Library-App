@@ -6,21 +6,26 @@
     "jest": true
   },
   "extends": [
+    "airbnb-typescript/base",
     "airbnb-base",
     "prettier",
     "plugin:prettier/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "plugins": [
     "import",
     "jsx-a11y",
     "html",
-    "prettier"
+    "prettier",
+    "typescript"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
     "ecmaFeatures": {

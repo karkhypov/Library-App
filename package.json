@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "public/index.html",
   "scripts": {
-    "dev": "npm run clean && parcel public/index.html --open",
+    "start": "npm run clean && parcel public/index.html --open",
     "build": "npm run clean && parcel build public/index.html",
     "clean": "rm -rf dist/*"
   },
@@ -25,8 +25,10 @@
   "devDependencies": {
     "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-typescript": "^10.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.20.1",
@@ -35,7 +37,8 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-lazy": "0.0.4",
     "postcss-modules": "^1.5.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "typescript": "^4.0.3"
   },
   "dependencies": {
     "autoprefixer": "^9.8.0",

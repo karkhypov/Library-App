@@ -7,19 +7,23 @@ const dropdown = document.querySelector('#dropdown');
 
 const placeholderSm = 'https://placeholder.pics/svg/75x115/DEDEDE/555555/n/a';
 
-async function fetchMovies(query) {
-  const response = await fetch(`${process.env.URL}/search/movie?api_key=${process.env.API_KEY}&query=${query}`);
+async function fetchMovies(query: string) {
+  const response = await fetch(
+    `${process.env.URL}/search/movie?api_key=${process.env.API_KEY}&query=${query}`
+  );
+
   let movies;
 
   if (response.ok) {
     movies = await response.json();
+    console.log(movies);
   } else {
     alert(`Error HTTP: ${response.status}`);
   }
   return movies.results;
 }
 
-const onInput = async e => {
+const onInput = async (e) => {
   if (!e.target.value) {
     dropdown.innerHTML = '';
     dropdown.classList.remove('open');
@@ -34,14 +38,18 @@ const onInput = async e => {
   }
   dropdown.innerHTML = '';
 
-  movies.forEach(movie => {
+  movies.forEach((movie) => {
     const li = document.createElement('li');
 
     li.innerHTML = `
     <a href='#'>
-    <img data-src='${process.env.IMG_W154}${movie.poster_path}' src=${placeholderSm} alt='movie poster'  />
+    <img data-src='${process.env.IMG_W154}${
+      movie.poster_path
+    }' src=${placeholderSm} alt='movie poster'  />
     <span>${movie.title}</span>
-    <span>${movie.release_date ? `(${movie.release_date.slice(0, 4)})` : ''}</span>
+    <span>${
+      movie.release_date ? `(${movie.release_date.slice(0, 4)})` : ''
+    }</span>
     </a>
     `;
 
