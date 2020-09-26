@@ -7,12 +7,14 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './public/**/*.html',
     './src/**/*.vue',
     './src/**/*.jsx',
+    './src/**/*.tsx',
     './src/**/*.js',
+    './src/**/*.ts',
     // etc.
   ],
 
   // This is the function used to extract class names from your templates
-  defaultExtractor: content => {
+  defaultExtractor: (content) => {
     // Capture as liberally as possible, including things like `h-(screen-1.5)`
     const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [];
 
@@ -24,5 +26,9 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 });
 
 module.exports = {
-  plugins: [tailwindcss, autoprefixer, ...(process.env.NODE_ENV === 'production' ? [purgecss] : [])],
+  plugins: [
+    tailwindcss,
+    autoprefixer,
+    ...(process.env.NODE_ENV === 'production' ? [purgecss] : []),
+  ],
 };

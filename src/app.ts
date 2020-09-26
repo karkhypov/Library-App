@@ -1,13 +1,15 @@
+// import * as dotenv from 'dotenv';
 import { debounce, lazyImages } from './utils';
+const dotenv = require('dotenv');
 
-require('dotenv').config();
+dotenv.config();
 
 const input = document.querySelector('input');
 const dropdown = document.querySelector('#dropdown');
 
 const placeholderSm = 'https://placeholder.pics/svg/75x115/DEDEDE/555555/n/a';
 
-async function fetchMovies(query: string) {
+async function fetchMovies(query) {
   const response = await fetch(
     `${process.env.URL}/search/movie?api_key=${process.env.API_KEY}&query=${query}`
   );
@@ -16,7 +18,6 @@ async function fetchMovies(query: string) {
 
   if (response.ok) {
     movies = await response.json();
-    console.log(movies);
   } else {
     alert(`Error HTTP: ${response.status}`);
   }
@@ -33,7 +34,7 @@ const onInput = async (e) => {
   const movies = await fetchMovies(e.target.value);
   if (movies.length === 0) {
     dropdown.classList.add('open');
-    dropdown.innerHTML = `<h5 style='padding:15px;'>No results found</h5>`;
+    dropdown.innerHTML = "<h5 style='padding:15px;'>No results found</h5>";
     return;
   }
   dropdown.innerHTML = '';
