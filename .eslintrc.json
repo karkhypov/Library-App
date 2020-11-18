@@ -2,11 +2,13 @@
   "plugins": [
     "@typescript-eslint",
     "prettier",
+    // "unicorn",
     "import"
   ],
   "extends": [
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/recommended",
+    // "plugin:unicorn/recommended",
     "plugin:prettier/recommended",
     "prettier",
     "prettier/@typescript-eslint"
@@ -14,12 +16,21 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "env": {
     "es6": true,
     "browser": true,
     "node": true
   },
-  "rules": {}
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow"
+      }
+    ]
+  }
 }
