@@ -1,36 +1,25 @@
 {
-  "env": {
-    "browser": true,
-    "node": true,
-    "jquery": true,
-    "jest": true
-  },
-  "extends": [
-    "airbnb-base",
-    "airbnb-typescript/base",
-    "plugin:jsx-a11y/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
-  ],
   "plugins": [
     "@typescript-eslint",
-    "import",
-    "jsx-a11y",
-    "html"
+    "prettier",
+    "import"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
     "ecmaVersion": 2020,
-    "ecmaFeatures": {
-      "impliedStrict": true,
-      "classes": true
-    },
     "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
   },
   "rules": {}
 }
