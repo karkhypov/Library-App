@@ -1,14 +1,33 @@
 {
   "name": "movie-search-app",
-  "version": "1.0.0",
-  "description": "Movie Search App",
-  "author": "Kirill Arkhypov",
-  "license": "MIT",
-  "main": "public/index.html",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^12.20.7",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.2.3",
+    "web-vitals": "^1.1.1"
+  },
   "scripts": {
-    "start": "npm run clean && parcel public/index.html --open",
-    "build": "npm run clean && parcel build public/index.html",
-    "clean": "rm -rf dist/*"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -23,28 +42,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.10.1",
-    "@babel/preset-env": "^7.10.1",
-    "@babel/preset-typescript": "^7.12.7",
-    "@types/node": "^14.11.2",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
-    "eslint": "^7.13.0",
-    "eslint-config-airbnb-typescript": "^12.0.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-unicorn": "^23.0.0",
-    "parcel-bundler": "^1.12.4",
-    "parcel-plugin-lazy": "0.0.4",
-    "postcss-modules": "^1.5.0",
-    "prettier": "^2.1.2",
-    "typescript": "^4.0.5"
-  },
-  "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "autoprefixer": "^9.8.0",
-    "dotenv": "^8.2.0",
-    "tailwindcss": "^1.6.2"
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   }
 }

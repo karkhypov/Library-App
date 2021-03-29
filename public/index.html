@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="../src/app.ts" defer></script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="movie-search-app" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
     <title>Movie Search App</title>
   </head>
   <body>
-    <header class="bg-teal-900">
-      <div class="flex justify-between p-4">
-        <img src="logo.svg" alt="logo" />
-        <input type="text" placeholder="Find movies" />
-      </div>
-      <ul id="dropdown"></ul>
-    </header>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <div>
-      <p
-        class="text-yellow-100 bg-yellow-900 p-4 hover:text-yellow-400 cursor-pointer"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse totam
-        repudiandae error illum voluptatem possimus deleniti quidem in
-        laudantium? Reiciendis recusandae nostrum modi ex aliquam, odio eius
-        necessitatibus, repellendus in, consequuntur iste! Voluptatem eveniet
-        quae deserunt quasi, ipsam fugit accusamus cum modi aliquam quidem
-        aperiam quia esse, quis consequuntur dolore non velit explicabo a
-        deleniti vel molestias, eligendi et sequi qui. Dolorem maxime soluta,
-        praesentium sapiente quos earum sed optio suscipit! Accusantium
-        necessitatibus hic eius odio. Laboriosam aut ab tenetur alias sequi
-        repudiandae cumque magni minus impedit beatae deserunt illo, illum
-        sapiente quia omnis architecto praesentium consequatur eveniet
-        recusandae molestias voluptatem! Earum fuga totam sint ducimus
-        cupiditate harum sunt eum in vero numquam maiores temporibus repellat
-        saepe voluptates, labore, nemo aut odio? Perspiciatis nihil ab quidem,
-        fuga sed ea voluptate quod at totam necessitatibus molestiae vel quae
-        nobis ut repellendus saepe! Commodi eveniet assumenda perspiciatis odio
-        sequi tenetur placeat doloribus?
-      </p>
-    </div>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
